@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: grid;
+            /* 
+                열의 개수 및 크기 :  grid-template-columns
+                행의 개수 및 크기 :  grid-template-rows
+            */
+            grid-template-columns: 100px 100px 200px;
+            /* 전체 요소의 크기를 기준으로 비율로 크기 지정 */
+            /* 
+                fr - fracion : 분수
+                요소의 크기의 비율에 따라 여백을 조정하는 수치
+            */
+            grid-template-columns: 1fr 2fr 1fr;
+
+            
+            grid-template-rows: 100px 200px;
+            row-gap: 10px;
+            column-gap: 20px;
+            grid-gap: 20px 10px;
+            grid-gap: 10px;
+        }
+
+        .wrapper div, .box_wrapper div{
+            background-color: beige;
+            border: 2px solid rgb(147, 130, 243);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .box_wrapper{
+            display: grid;
+            grid-gap: 10px;
+        }
+        /* grid 형식의 wrapper 기준으로 행과 열의 위치 지정 */
+        .box1{
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .box2{
+            grid-row: 1;
+            grid-column: 2;
+            grid-row-start: 1;
+            grid-row-end: 4;
+            grid-row: 1 / 4;
+            grid-row: 4 / 1;
+
+        }
+
+        .box3{
+            grid-row: 4;
+            grid-column: 1;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        /* 너비가 601px 이상이면 적용 */
+        @media (min-width:601px) and (max-width:950px){
+            body{
+                background-color: pink;
+                color: white;
+            }
+        }
+        /* 가로 */
+        @media (max-width:600px) and (orientation:landscape){
+            body{
+                background-color: skyblue;
+                color: gray;
+            }
+        }
+        /* 세로 */
+        @media (max-width:600px) and (orientation:portrait){
+            body{
+                background-color: aquamarine;
+                color: blue;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>웹사이트의 내용을 그대로 유지하면서 다양한 크기에 맞춰 웹사이트를 표시하는방법</li>
+        <li>화면의 크기에 반응해 화면 요소들을 자동으로 바꾸어 사이트를 구현하는것</li>
+        <li>가로 모드에 맞춘 레이아웃 변경 가능</li>
+        <li>사이트 유지 보수가 용이</li>
+    </ul>
+    <hr/>
+    <br/>
+    <h3>반응형 웹 구현을 위한 기술</h3>
+    <ul>
+        <li>
+            그리드 레이아웃
+            <ul>
+                <li>배치된 요소를 여러개의 행과 열로 나누어, 필여할 때마다 병합하여 배치하는 격자 표현방법</li>
+                <li>column :열</li>
+                <li>row : 행</li>
+            </ul>
+        </li>
+    </ul>
+    <hr/>
+    <h3>그리드 레이아웃 예제</h3>
+    <div class="wrapper">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+    </div>
+    <hr/>
+    <div class="box_wrapper">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box6">box6</div>
+    </div>
+    <hr/>
+    <ul>
+        <li>
+            @media 미디어쿼리
+            <ul>
+                <li>접속하는 장치 (미디어) 또는 크기에 따라 특정한 css 스타일을 사용하도록 지정하는 쿼리</li>
+                <li>
+                    기본형태 : <hr/>
+                    @media [only | not] 미디어 유형 [and 조건]* 
+                    [and조건]{
+                        적용할 디자인속성
+                    }
+                 </li>
+                 <li>
+                    미디어 유형 <br/>
+                    all: 모든 미디어 유형 <br/>
+                    print: 인쇄 장치 <br/>
+                    <strong>screen: 장치의 화면</strong> <br/>
+                    tv: 음성과 영상이 동시에 출력되는 미디어 <br/>
+                    projector:프로젝트
+                 </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

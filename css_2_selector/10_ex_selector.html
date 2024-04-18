@@ -1,0 +1,87 @@
+<!-- 10_ex_selector.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* :root 가상의 최상위 요소 선택자 */
+        :root{
+            --text-content-color:skyblue;
+            --text-content-size:30px;
+            --before-color:yellow;
+            --after-color:blue;
+        }
+
+        .before{
+            color: var(--text-content-color);
+        }
+
+        p.before{
+            color:pink;
+        }
+
+        /* 
+            가상선택자  
+            선택자::가상요소
+        */
+
+        p.before::before{
+            content : "before는 앞에 추가됩니다.";
+            color:var(--before-color);
+        }
+
+        .after::after{
+            content : "after는 뒤에 추가됩니다.";
+            color:blue;
+        }
+
+        .line{
+            color : var(--test-content-color,blue);
+            font-size : var(--test-content-size, 40px);
+            background-color : var(--text-content-color);
+        }
+
+        .line::first-line{
+            color: red;
+        }
+        
+        .line::first-letter{
+            color: hotpink;
+        }
+
+        p::selection{
+            background-color: pink;
+            color: skyblue;
+        }
+
+        input[type=text]{
+            color: skyblue;
+            letter-spacing: 3px;
+        }
+
+        input[type=text]::placeholder{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- p.before{before 예시} -->
+    <p class="before">before 예시</p>
+    <!-- div.before{div before} -->
+    <div class="before">div before</div>
+    <!-- p.after{after 예시} -->
+    <p class="after">after 예시</p>
+    <p class="before after">
+        before after 예시
+    </p>
+    <!-- p.line -->
+    <p class="line">
+        <!-- lorem -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe atque deleniti commodi autem rem perferendis distinctio fuga inventore officia! Temporibus pariatur eos quia, nisi dignissimos accusantium saepe nobis tempore! Molestias.
+    </p>
+
+    <input type="text" placeholder="테스트용 문구 작성"/>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+        :root{
+            font-size: 36px;
+        }
+        /* html{
+            font-size: 24px;
+        } */
+        .font{
+            /* 
+                font-style : 이탤릭체 등의 글꼴 스타일 지정
+                font-weight : 글자두께
+                font-variant : (소문자를 대문자로)smaa=caps;
+                font-size : 글자 크기 [px, em, rem]
+                font=family : 글자 폰트 정하고 없으면 다른폰트
+            
+                
+            */
+            /font-size: 40px;
+            font-weight: normal;
+/* 
+    keyword : lighter           normal            bold        bolder
+    number  : 100,  200,  300,  400,  500  , 600, 700,  800,  900,
+    normal  : 보통 = 400
+    bold  : 굵은 글자 = 700
+    lighter  : 물려받은 글자 크기보다 얅게
+    bolder : 물려받은 글자 크기보다 굵게
+    initial  : 물려받은 값에 상관없이 기본값 사용
+ 
+   
+   
+ */
+            /* 글꼴 */
+            /* font-family: Arial, Times, sans-serif; */
+            font-family: "Nanum Gothic Coding", monospace;
+            
+        }
+        .child{
+            font-weight: bolder;
+            /* font-size: 1.5em; */
+            font-size: 1.5rem;
+            font-variant: small-caps;
+            /* 
+                기본값  : normal
+                         italic
+                         oblique
+            */
+            font-style: italic;
+            font-style: oblique;
+            /* 
+                italic 과 oblique 차이점
+                italic은 italic체로 디자인된 폰튼를 사용
+                oblique는 normal 폰트를 단순히 기울이기만 함
+            */
+        }
+
+        .third{
+            font-weight: lighter;
+            /* font-size: 150%; */
+            font-size: 1.5rem;
+        }
+        .size{
+            font-size: 16px;
+        }
+
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            /* inline 요소의 수평정렬 */
+            /* left , right , center */
+            /* start , end , center */
+            text-align: center;
+            /* 한라인이 차지하는 높이 */
+            line-height: 250px;
+
+            /* shadow 효과*/
+            /* box에 그림자 효과 부여 */
+            /*           우  하   흐림도  그림자색 */
+            box-shadow: 5px 5px 10px red;
+            /* text에 그림자 효과 부여 */
+            text-shadow: -5px -5px 5px;
+        }
+
+        .content{
+            font-size: 1.7em;
+            /* 자간 : 글자사이의 간격 */
+            letter-spacing: 2px;
+            /*  단어 사이의 간격 */
+            word-spacing: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="Font">
+        hello HTML
+        <div class="child">
+            hello html
+            <div class="third">
+                hello html
+            </div>
+        </div>
+    </div>
+    <span>test</span> <span class="size">Test 16px</span>
+    <br/>
+    <hr/>
+    <div class="box">
+        <span class="content">content Space</span>  <br/>
+        <span class="content">content Space</span>
+    </div>
+
+</body>
+</html>
